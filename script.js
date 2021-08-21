@@ -37,7 +37,7 @@ function generatePassword() {
   if (userChoice < 8) {
     window.alert("Your password must be at least 8 characters")
     return generatePassword();
-  } else if (userChoice > 129) {
+  } else if (userChoice > 128) {
     window.alert("Your password must be less than 129 characters long")
     return generatePassword();
   } else if (!userChoice) {
