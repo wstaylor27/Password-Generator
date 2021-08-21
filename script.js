@@ -7,11 +7,18 @@ generateBtn.addEventListener("click", writePassword);
 // Write password to the #password input
 function writePassword() {
 
+
+
   var password = generatePassword(); // return password
+
 
   var passwordText = document.querySelector("#password");
 
+
+
   passwordText.value = password;
+
+
 
 }
 
@@ -27,11 +34,13 @@ function generatePassword() {
   var passwordText = "";
 
 
-  if (userChoice <= 7) {
-    window.alert("Your password must be at least 8 characters");
-  } else if (userChoice >= 129) {
-    window.alert("Your password must be less than 129 characters long");
-  } else {
+  if (userChoice < 8) {
+    window.alert("Your password must be at least 8 characters")
+    return generatePassword();
+  } else if (userChoice > 129) {
+    window.alert("Your password must be less than 129 characters long")
+    return generatePassword();
+  } else if (!userChoice) {
     return;
   };
 
@@ -69,13 +78,17 @@ function generatePassword() {
 
   var password = "";
   for (let i = 0; i < userChoice; i++) {
-    password += passwordText[Math.floor(Math.random() * passwordText.length)]
+    password += passwordText.charAt(Math.floor(Math.random() * passwordText.length))
 
 
-    return password
 
   };
 
-  generateBtn.addEventListener("click", writePassword);
+  console.log(password);
 
-}
+  return password
+};
+
+
+generateBtn.addEventListener("click", writePassword);
+
