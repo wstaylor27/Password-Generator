@@ -15,23 +15,67 @@ function writePassword() {
 
 }
 
+
 function generatePassword() {
 
   // Logic for password
 
   var userChoice = window.prompt("How many characters would you like your password to contain?");
 
-  var userChoice = parseInt(userChoice);
+  userChoice = parseInt(userChoice);
+
+  var passwordText = "";
+
 
   if (userChoice <= 7) {
     window.alert("Your password must be at least 8 characters");
   } else if (userChoice >= 129) {
     window.alert("Your password must be less than 129 characters long");
   } else {
-    window.prompt("What is your password?");
-  }
+    return;
+  };
 
 
-  return 'Password'
+  var strings = {
+    lowercaseCharacters: 'abcdefghijklmnopqrstuvwxyz',
+    uppercaseCharacters: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+    numericCharacters: '0123456789',
+    specialCharacters: '!?@#$%^&*'
+  };
+
+  var lowercaseCharacters = window.confirm("Do you want the password to contain lowercase characters?")
+
+  if (lowercaseCharacters) {
+    passwordText += strings.lowercaseCharacters;
+  };
+
+  var uppercaseCharacters = window.confirm("Do you want the password to contain uppercase character?")
+
+  if (uppercaseCharacters) {
+    passwordText += strings.uppercaseCharacters;
+  };
+
+  var numericCharacters = window.confirm("Do you want the password to contain numbers?")
+
+  if (numericCharacters) {
+    passwordText += strings.numericCharacters;
+  };
+
+  var specialCharacters = window.confirm("Do you want the password to contain symbols?")
+
+  if (specialCharacters) {
+    passwordText += strings.specialCharacters;
+  };
+
+  var password = "";
+  for (let i = 0; i < userChoice; i++) {
+    password += passwordText[Math.floor(Math.random() * passwordText.length)]
+
+
+    return password
+
+  };
+
+  generateBtn.addEventListener("click", writePassword);
 
 }
