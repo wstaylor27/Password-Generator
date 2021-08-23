@@ -1,4 +1,4 @@
-# Password-Generator
+# Randy-Passcode-Generator
 
 ## Introduction
 
