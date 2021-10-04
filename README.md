@@ -48,6 +48,6 @@ I learned about the importance of understanding variables and queries. Every wee
 
 ## URL
 
-https://wstaylor27.github.io/Password-Generator/
+https://wstaylor27.github.io/Randy-Passcode-Generator/
 
 ![image](https://user-images.githubusercontent.com/54382901/130334737-ca87d76d-6c2e-427e-b780-1570ec2092e5.png)
